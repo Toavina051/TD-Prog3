@@ -3,43 +3,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private final String url;
-    private final String user;
-    private final String password;
-
-    public DBConnection(String url, String user, String password) {
-        this.url = url;
-        this.user = user;
-        this.password = password;
+    public static Connection getConnection() {
+        return null;
     }
 
-    public Connection getConnection() throws SQLException {
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(url, user, password);
+    public Connection getDBConnection() throws SQLException {
+    String url = "jdbc:postgresql://localhost:5432/product_management_db";
+    String user = "product_manager_user";
+    String password = "123456";
 
-            System.out.println("Connexion à la base réussie !");
-        } catch ( e) {
-            System.err.println("Driver PostgreSQL introuvable !");
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
-    public void main(String[] args) {
-        DBConnection dbConn = new DBConnection(
-                "jdbc:postgresql://localhost:5432/product_management_db",
-                "product_manager_user",
-                "123456"
-        );
-
-        try (Connection conn = dbConn.getConnection()) {
-            if (conn != null) {
-                System.out.println("Test de connexion réussi !");
-            }
+        try (
+                Connection con = DriverManager.getConnection(url, user, password)){
+            System.out.println("Connected !");
+            return con;
         } catch (SQLException e) {
-            System.err.println("Échec de connexion");
-            e.printStackTrace();
+            System.out.println("Error: " + e.getMessage());
         }
+        return null;
     }
 }
