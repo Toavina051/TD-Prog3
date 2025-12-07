@@ -1,3 +1,5 @@
+\c product_management_db
+
 INSERT INTO Product (id, name, price, creation_datetime) VALUES
 (1, 'Laptop Dell XPS', 4500.00, '2024-01-15 09:30:00'),
 (2, 'iPhone 13', 5200.00, '2024-02-01 14:10:00'),

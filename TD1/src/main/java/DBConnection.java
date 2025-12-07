@@ -16,11 +16,10 @@ public class DBConnection {
     public Connection getConnection() throws SQLException {
         Connection connection = null;
         try {
-            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, user, password);
 
             System.out.println("Connexion à la base réussie !");
-        } catch (ClassNotFoundException e) {
+        } catch ( e) {
             System.err.println("Driver PostgreSQL introuvable !");
             e.printStackTrace();
         }
