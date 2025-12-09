@@ -12,7 +12,7 @@ public class Main {
         } catch (SQLException e) {
             System.err.println("Impossible d'obtenir la connexion. Vérifie : URL, user, mot de passe et que PostgreSQL tourne.");
             e.printStackTrace();
-            return; // on arrête si la connexion échoue
+            return;
         }
 
         DataRetriever dr = new DataRetriever(dbConnection);
