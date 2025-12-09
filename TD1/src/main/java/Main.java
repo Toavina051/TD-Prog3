@@ -7,7 +7,6 @@ public class Main {
 
         DBConnection dbConnection = new DBConnection();
 
-        // --- Test explicite de la connexion pour afficher l'erreur si elle existe ---
         try (Connection test = dbConnection.getConnection()) {
             System.out.println("Connexion à la BDD OK : ");
         } catch (SQLException e) {
@@ -16,7 +15,6 @@ public class Main {
             return; // on arrête si la connexion échoue
         }
 
-        // --- Si on arrive ici la connexion fonctionne ---
         DataRetriever dr = new DataRetriever(dbConnection);
 
         System.out.println("\n=== ALL CATEGORIES ===");
