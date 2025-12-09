@@ -26,6 +26,9 @@ public class Product {
     public Category getCategories() {
         return categories;
     }
+    public void setCategories(Category category) {
+        this.categories = category;
+    }
 
     @Override
     public String toString() {

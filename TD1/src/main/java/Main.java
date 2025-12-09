@@ -25,7 +25,7 @@ public class Main {
         System.out.println("\n=== PAGINATION page 1 size 2 ===");
         dr.getProductList(1, 2).forEach(System.out::println);
 
-        /*System.out.println("\n=== FILTER BY NAME ('lap') ===");
+        System.out.println("\n=== FILTER BY NAME ('lap') ===");
         dr.getProductsByCriteria("lap", null, null, null)
                 .forEach(System.out::println);
 
@@ -35,6 +35,6 @@ public class Main {
                 "Electronics",
                 Instant.parse("2023-12-30T00:00:00Z"),
                 Instant.parse("2024-12-31T00:00:00Z")
-        ).forEach(System.out::println);*/
+        ).forEach(System.out::println);
     }
 }
