@@ -50,7 +50,6 @@ public class DataRetriever {
                 products.add(new Product(
                         result.getInt("id"),
                         result.getString("name"),
-                        result.getDouble("price"),
                         result.getTimestamp("creation_datetime").toInstant()
                 ));
             }
