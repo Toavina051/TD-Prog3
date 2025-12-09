@@ -122,7 +122,6 @@ public class DataRetriever {
                             result.getTimestamp(3).toInstant()
                     );
 
-                    // On met une seule catégorie si elle existe
                     int categoryId = result.getInt(4);
                     if (!result.wasNull()) {
                         currentProduct.setCategories(
