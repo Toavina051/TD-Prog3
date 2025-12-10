@@ -33,35 +33,15 @@ public class Main {
                 .forEach(System.out::println);
         dr.getProductsByCriteria("iphone", "mobile", null, null)
                 .forEach(System.out::println);
-        dr.getProductsByCriteria(null, null, Instant.ofEpochSecond(2024-02-01), Instant.ofEpochSecond(2024-03-01))
+        dr.getProductsByCriteria(null, null, Instant.ofEpochSecond(2024 - 02 - 01), Instant.ofEpochSecond(2024 - 03 - 01))
                 .forEach(System.out::println);
         dr.getProductsByCriteria("samsung", "bureau", null, null)
                 .forEach(System.out::println);
         dr.getProductsByCriteria("sony", "informatique", null, null)
                 .forEach(System.out::println);
-        dr.getProductsByCriteria(null, "audio", Instant.ofEpochSecond(2024-01-01), Instant.ofEpochSecond(2024-12-01))
+        dr.getProductsByCriteria(null, "audio", Instant.ofEpochSecond(2024 - 01 - 01), Instant.ofEpochSecond(2024 - 12 - 01))
                 .forEach(System.out::println);
         dr.getProductsByCriteria(null, null, null, null)
                 .forEach(System.out::println);
-
-        System.out.println("\n=== ProductByCriteria ===");
-        dr.getProductsByCriteria(
-                null,
-                null,
-                Instant.parse(null),
-                Instant.parse(null)
-        ).forEach(System.out::println);
-        dr.getProductsByCriteria(
-                "Dell",
-                null,
-                Instant.parse(null),
-                Instant.parse(null)
-        ).forEach(System.out::println);
-        dr.getProductsByCriteria(
-                null,
-                "informatique",
-                Instant.parse(null),
-                Instant.parse(null)
-        ).forEach(System.out::println);
+        }
     }
-}

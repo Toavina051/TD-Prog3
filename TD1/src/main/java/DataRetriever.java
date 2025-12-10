@@ -140,27 +140,4 @@ public class DataRetriever {
 
         return products;
     }
-
-
-    public List<Product> getProductsByCriteria(
-            String productName,
-            String categoryName,
-            Instant creationMin,
-            Instant creationMax,
-            int page,
-            int size) {
-
-        List<Product> filtered = getProductsByCriteria(productName, categoryName, creationMin, creationMax);
-
-        int from = (page - 1) * size;
-        int to = Math.min(from + size, filtered.size());
-
-        if (from >= filtered.size()) {
-            return new ArrayList<>();
-        }
-
-        return filtered.subList(from, to);
-    }
-
-
 }
