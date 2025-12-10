@@ -20,19 +20,48 @@ public class Main {
         System.out.println("\n=== ALL CATEGORIES ===");
         dr.getAllCategories().forEach(System.out::println);
 
-        System.out.println("\n=== PAGINATION page 1 size 2 ===");
-        dr.getProductList(1, 2).forEach(System.out::println);
+        System.out.println("\n=== ProductList ===");
+        dr.getProductList(1, 10).forEach(System.out::println);
+        dr.getProductList(1, 5).forEach(System.out::println);
+        dr.getProductList(1, 3).forEach(System.out::println);
+        dr.getProductList(2, 2).forEach(System.out::println);
 
-        System.out.println("\n=== FILTER BY NAME ('lap') ===");
-        dr.getProductsByCriteria("lap", null, null, null)
+        System.out.println("\n=== ProductByCriteria ===");
+        dr.getProductsByCriteria("Dell", null, null, null)
+                .forEach(System.out::println);
+        dr.getProductsByCriteria(null, "info", null, null)
+                .forEach(System.out::println);
+        dr.getProductsByCriteria("iphone", "mobile", null, null)
+                .forEach(System.out::println);
+        dr.getProductsByCriteria(null, null, Instant.ofEpochSecond(2024-02-01), Instant.ofEpochSecond(2024-03-01))
+                .forEach(System.out::println);
+        dr.getProductsByCriteria("samsung", "bureau", null, null)
+                .forEach(System.out::println);
+        dr.getProductsByCriteria("sony", "informatique", null, null)
+                .forEach(System.out::println);
+        dr.getProductsByCriteria(null, "audio", Instant.ofEpochSecond(2024-01-01), Instant.ofEpochSecond(2024-12-01))
+                .forEach(System.out::println);
+        dr.getProductsByCriteria(null, null, null, null)
                 .forEach(System.out::println);
 
-        System.out.println("\n=== FILTER + DATE RANGE ===");
+        System.out.println("\n=== ProductByCriteria ===");
         dr.getProductsByCriteria(
                 null,
-                "Electronics",
-                Instant.parse("2023-12-30T00:00:00Z"),
-                Instant.parse("2024-12-31T00:00:00Z")
+                null,
+                Instant.parse(null),
+                Instant.parse(null)
+        ).forEach(System.out::println);
+        dr.getProductsByCriteria(
+                "Dell",
+                null,
+                Instant.parse(null),
+                Instant.parse(null)
+        ).forEach(System.out::println);
+        dr.getProductsByCriteria(
+                null,
+                "informatique",
+                Instant.parse(null),
+                Instant.parse(null)
         ).forEach(System.out::println);
     }
 }
